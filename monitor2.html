@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor 2 Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <style>
+        body {
+            background-color: #f0f0f0; /* or use background-image property */
+            margin: 0; /* remove default margin */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        /* ... other styles ... */
+    </style>
+
+    <header>
+        <h1>Monitor 2 Details</h1>
+    </header>
+
+    <main class="main-content">
+        <div class="box">
+            <div class="image-container">
+                <img class="image" src="detector.png" alt="Monitor 2 Image">
+            </div>
+            <h2>Monitor 2</h2>
+            <p>Dose rate: <strong>YY units</strong></p>
+            <p>Location: <strong>Room XYZ</strong></p>
+            <p>Last Update: <strong>DD/MM/YYYY HH:MM AM/PM</strong></p>
+
+            <!-- Graph Chart -->
+            <canvas id="myChart" width="400" height="200"></canvas>
+
+            <a class="button" href="#">Back to Dashboard</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Example data for the chart
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Point 1', 'Point 2', 'Point 3', 'Point 4'],
+                datasets: [{
+                    label: 'Example Line Chart',
+                    data: [15, 30, 20, 35], // Adjust data as needed
+                    fill: false,
+                    borderColor: 'green', // Adjust color as needed
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
